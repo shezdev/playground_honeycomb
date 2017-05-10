@@ -1,9 +1,10 @@
 #!/usr/bin/env ruby
 
-require './models/broadcaster'
-require './models/delivery'
-require './models/material'
-require './models/order'
+require './lib/broadcaster'
+require './lib/delivery'
+require './lib/material'
+require './lib/printer'
+require './lib/order'
 
 standard_delivery = Delivery.new(:standard, 10.0)
 express_delivery = Delivery.new(:express, 20.0)
@@ -24,5 +25,9 @@ order.add broadcaster_1, standard_delivery
 order.add broadcaster_2, standard_delivery
 order.add broadcaster_3, express_delivery
 
-print order.output
+# print order.output
+
+#----new
+print order.print_output
+#-----
 print "\n"
