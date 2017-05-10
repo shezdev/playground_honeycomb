@@ -1,6 +1,6 @@
 class Order
   COLUMNS = {
-    broadcaster: 20,
+    broadcaster: 20, #name, width
     delivery: 8,
     price: 8
   }.freeze
@@ -21,7 +21,7 @@ class Order
   end
 
   def output
-    [].tap do |result|
+    [].tap do |result| #Yields 'result' to the block, and then returns 'result'
       result << "Order for #{material.identifier}:"
 
       result << COLUMNS.map { |name, width| name.to_s.ljust(width) }.join(' | ')
@@ -34,6 +34,7 @@ class Order
           ("$#{delivery.price}").ljust(COLUMNS[:price])
         ].join(' | ')
       end
+
 
       result << output_separator
       result << "Total: $#{total_cost}"
