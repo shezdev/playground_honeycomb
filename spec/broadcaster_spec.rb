@@ -1,0 +1,3 @@
+describe Broadcaster do
+  
+end
