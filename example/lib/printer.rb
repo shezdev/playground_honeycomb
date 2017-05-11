@@ -6,7 +6,7 @@ module Printer
     price: 8
   }.freeze
 
-  def output(items)
+  def output(items, total_cost) #total cost is new
     [].tap do |result| #Yields 'result' to the block, and then returns 'result'
       result << "Order for #{material.identifier}:"
 

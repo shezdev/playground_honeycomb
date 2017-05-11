@@ -17,13 +17,16 @@ class Order
     items << [broadcaster, delivery]
   end
 
-  def total_cost
-    items.inject(0) { |memo, (_, delivery)| memo += delivery.price }
-  end
 
 #----new
   def print_output
-    output(items)
+    output(items, getTotalCost)
+  end
+
+  private
+
+  def getTotalCost
+    total_cost = items.inject(0) { |memo, (_, delivery)| memo += delivery.price }
   end
 #-----
   # def output
